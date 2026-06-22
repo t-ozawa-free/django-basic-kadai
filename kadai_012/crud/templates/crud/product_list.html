@@ -11,7 +11,6 @@
            <th>価格</th>
            <th>カテゴリ</th>
            <th>商品画像</th>
-           <th>商品詳細の説明</th>
            <th>アクション</th>
        </tr>
    </thead>
@@ -21,9 +20,9 @@
        <td>{{ product.price }} 円</td>
        <td>{{ product.category.name }}</td>
        <td><img src="{{ product.img.url }}" style="width:100px height:auto;"></td>
-       <td>{{ product.detail }}</td>
        <td>
-            <button class="btn btn-primary" onclick="location.href='{% url "edit" pk=product.pk %}'">編集</button>
+        <button class="btn btn-primary" onclick="location.href='{% url "detail" pk=product.pk %}'">詳細</button>
+        <button class="btn btn-primary" onclick="location.href='{% url "edit" pk=product.pk %}'">編集</button>
             <button class="btn btn-danger" onclick="location.href='{% url "delete" pk=product.pk %}'">削除</button>
        </td>
    </tr>
